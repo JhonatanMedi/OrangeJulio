@@ -19,4 +19,8 @@ public class PimPage {
 		buttonPages.btnAdd();
 	}
 	
+	public void prueba() {
+		
+	}
+	
 }

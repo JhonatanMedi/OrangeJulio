@@ -2,11 +2,13 @@ package OrangeJulio.Definitions;
 
 import org.openqa.selenium.WebDriver;
 
+import OrangeJulio.Pages.LeavePage;
 import OrangeJulio.Pages.LoginPage;
 import OrangeJulio.Pages.PimPage;
 import OrangeJulio.Steps.Conexion;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 
 
 
@@ -16,6 +18,7 @@ public class DefinitionsSteps {
 	private Conexion conexion = new Conexion();
 	private LoginPage loginPage = new LoginPage(driver);
 	private PimPage pimPage = new PimPage(driver);
+	private LeavePage leavePage = new LeavePage(driver);
 	
 
 	@Given("^abrir el navegador$")
@@ -36,5 +39,17 @@ public class DefinitionsSteps {
 	public void llegarAddEmployee() {
 		this.pimPage = new PimPage(driver);
 		this.pimPage.llegarAddEmployee();
+	}
+	
+	@When("^diligencie nombre (.*) y apellido (.*)$")
+	public void diligenciaEmpleado(String firstName, String lastName) {
+		this.pimPage = new PimPage(driver);
+		this.pimPage.diligenciaEmpleado(firstName, lastName);
+	}
+	
+	@When("^buscar el empleado (.*) y selecionar una accion (.*)$")
+	public void buscarEmpleadoActions(String employee, String actions) {
+		this.leavePage = new LeavePage(driver);
+		this.leavePage.buscarEmpleadoActions(employee, actions);
 	}
 }

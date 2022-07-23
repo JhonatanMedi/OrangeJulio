@@ -4,24 +4,23 @@
 @Regresion
 Feature: Pim
 
-  @AddEmploe
-  @Sprint2
+  @AddEmploe @Sprint2
   Scenario Outline: Add Employee
     Given abrir el navegador
     And diligenciar usuario <userName> y password <pass>
     And llegar a la opcion agregar empleado
+    When diligencie nombre <firstName> y apellido <lastName>
 
     Examples: 
-      | userName | pass     |
-      | Admin    | admin123 |
+      | userName | pass     | firstName | lastName |
+      | Admin    | admin123 | Jhontana  | medina   |
 
-  @Pepito
-  @Sprint2
-  Scenario Outline: Add
+  @Sprint3
+  Scenario Outline: leave buscar
     Given abrir el navegador
     And diligenciar usuario <userName> y password <pass>
-    And llegar a la opcion agregar empleado
+    When buscar el empleado <employee> y selecionar una accion <actions>
 
     Examples: 
-      | userName | pass     |
-      | Admin    | admin123 |
+      | userName | pass     | employee | actions |
+      | Admin    | admin123 | Joe Root | Cancel  |

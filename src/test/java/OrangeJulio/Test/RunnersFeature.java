@@ -6,7 +6,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features = { "src/test/resources/features" }, glue = { "OrangeJulio.Definitions" }, tags = "@Sprint2")
+@CucumberOptions(features = { "src/test/resources/features" }, glue = { "OrangeJulio.Definitions" }, tags = "@Sprint3")
 
 public class RunnersFeature {
 

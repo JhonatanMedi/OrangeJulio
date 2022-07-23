@@ -20,6 +20,7 @@ public class LoginPage {
 		private WebElement inputUserName;
 		
 		
+		
 		@FindBy(how = How.ID, using = "txtPassword")
 		private WebElement inputPassword;
 		
